@@ -15,12 +15,17 @@ namespace signals {
         double mean_, variance_, stdDev_;
         bool meanComputed_, varianceComputed_, stdDevComputed_;
     public:
-        explicit Statistic(const std::string &name, const SyncSignalReader *s) : name_(name), s_(s), meanComputed_(false),
-        varianceComputed_(false), stdDevComputed_(false){}
+        Statistic(const std::string &name) : name_(name), meanComputed_(false),
+                                             varianceComputed_(false), stdDevComputed_(false) {}
 
-        //oppure il costruttore senza *s e solo name e poi il metodo void setSignal
-        //void setSignal(const SyncSignalReader *s) {s_ = s;}
+        //aggiunto
+        Statistic(const std::string &name, const SyncSignalReader *s) : Statistic(name) {
+            s_ = s;
+        }
 
+        void setSignal(const SyncSignalReader *s) { s_ = s; }
+
+        //cambiato double con void
         void meanCompute();
 
         void varianceCompute();

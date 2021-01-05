@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/statisticSignalsAnalisis.dir/main.cpp.o CMakeFiles/statisticSignalsAnalisis.dir/src/signals.cpp.o CMakeFiles/statisticSignalsAnalisis.dir/src/statistic.cpp.o  -o statisticSignalsAnalisis.exe -Wl,--out-implib,libstatisticSignalsAnalisis.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

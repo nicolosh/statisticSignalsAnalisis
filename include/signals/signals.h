@@ -41,17 +41,21 @@ namespace signals {
 
         virtual bool addSample(const Sample &sample) override;
 
-        //AGGIUNTO std::vector<Sample> &getSamples() { return samples_; }
+        //AGGIUNTO
+        const std::vector<Sample> &getSamples() const { return samples_; }
     };
 
 
-    class InterpolatedSignal : public AsyncSignal, SyncSignalReader {
+    class InterpolatedSignal : public AsyncSignal, public SyncSignalReader {
     protected:
         double dt_; // time step
     public:
         InterpolatedSignal(const std::string &name, double dt) : AsyncSignal(name), dt_(dt) {}
 
         double getTimeStep() const { return dt_; }
+
+        //aggiunto
+        void setTimeStep(double dt) { dt_ = dt; }
 
         virtual double getSample(int index) const override = 0;
 
@@ -60,14 +64,14 @@ namespace signals {
 
     class InterpolatedSignalZOH : public InterpolatedSignal {
     public:
-        //AGGIUNTO->InterpolatedSignalZOH(const std::string &name, double dt) : InterpolatedSignal(name, dt) {};
+        InterpolatedSignalZOH(const std::string &name, double dt) : InterpolatedSignal(name, dt) {}
 
         virtual double getSample(int index) const override;
     };
 
     class InterpolatedSignalLinear : public InterpolatedSignal {
     public:
-        //AGGIUNTO->InterpolatedSignalLinear(const std::string &name, double dt) : InterpolatedSignal(name, dt) {};
+        InterpolatedSignalLinear(const std::string &name, double dt) : InterpolatedSignal(name, dt) {}
 
         virtual double getSample(int index) const override;
     };

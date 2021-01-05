@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/signals/signals.h
+vector
+-
+string
+-
+iostream
+-
+
+../include/signals/statistic.h
+signals.h
+../include/signals/signals.h
+
+/cygdrive/c/Users/nicol/OneDrive/Desktop/C++/statisticSignalsAnalisis/include/signals/signals.h
+vector
+-
+string
+-
+iostream
+-
+
+/cygdrive/c/Users/nicol/OneDrive/Desktop/C++/statisticSignalsAnalisis/include/signals/statistic.h
+signals.h
+/cygdrive/c/Users/nicol/OneDrive/Desktop/C++/statisticSignalsAnalisis/include/signals/signals.h
+
+/cygdrive/c/Users/nicol/OneDrive/Desktop/C++/statisticSignalsAnalisis/main.cpp
+iostream
+-
+signals/signals.h
+-
+signals/statistic.h
+-
+
+/cygdrive/c/Users/nicol/OneDrive/Desktop/C++/statisticSignalsAnalisis/src/statistic.cpp
+cmath
+-
+../include/signals/statistic.h
+/cygdrive/c/Users/nicol/OneDrive/Desktop/C++/statisticSignalsAnalisis/include/signals/statistic.h
+

@@ -13,6 +13,7 @@ void signals::Statistic::meanCompute() {
     }
     mean_ = sum / s_->getSampleCounter();
     meanComputed_ = true;
+    //return mean_;
     std::cout << "Mean of your signal is " << mean_ << std::endl;
 }
 
@@ -26,6 +27,7 @@ void signals::Statistic::varianceCompute() {
     }
     variance_ = sum / s_->getSampleCounter();
     varianceComputed_ = true;
+    //return variance_;
     std::cout << "Variance of your signal is " << variance_ << std::endl;
 }
 
@@ -35,5 +37,6 @@ void signals::Statistic::stdDevCompute() {
 
     stdDev_ = sqrt(variance_);
     stdDev_ = true;
+    //return stdDev_;
     std::cout << "StdDev of your signal is " << stdDev_ << std::endl;
 }
